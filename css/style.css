@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+--Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+--Pale-Blue: hsl(243, 100%, 93%);
+--Grayish-Blue: hsl(229, 7%, 55%);
+--Dark-Blue: hsl(228, 56%, 26%);
+--Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+body{
+    background-color: var(--Very-Dark-Blue);
+}
+.my-1{
+    margin: 1.2rem 0;
+}
+.flex2{
+    display: flex;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../imgas/bg-desktop.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -100px;
+}
+.card{
+    background-color: var(--Dark-Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10px;
+    border-radius: 15px;
+    padding: 20px 30px;
+    min-width: 300px;
+    position: relative;
+}
+.card:nth-child(1)
+{
+    border-top-right-radius: 40%;
+    height: 200px;
+    width: 300px;
+}
+.card:nth-child(1) .icon
+{
+    display: flex;
+    width: 160px;
+    justify-content:space-between;
+    align-items: center;
+}
+.card:nth-child(1) .icon .imgBox
+{
+    border-radius: 10px;
+    padding: 7px;
+    background-color: var(--Very-Dark-Blue);
+    cursor: pointer;
+}
+.card:nth-child(2)
+{
+    height: 130px;
+    width: 470px;
+}
+.card:nth-child(2) .flex2>div:nth-child(1)
+{
+ color: var(--Grayish-Blue);
+}
+.card:nth-child(2) .flex2 div:nth-child(1) span
+{
+ font-size: 1.3rem;
+ color: var(--Pale-Blue);
+}
+.card:nth-child(2) .flex2 .spaceSize
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding:  10px;
+    width: 160px;
+    height: 60px;
+    margin-left:15px ;
+    border-radius: 10px;
+    color: var(--Grayish-Blue);
+    position: absolute;
+    right: 17px;
+    top: -37px;
+}
+.card:nth-child(2) .flex2 .spaceSize::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-top: 37px solid #fff;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    bottom: -50px;
+    right: 0px;
+    transform: rotateX(100px);
+}
+.card:nth-child(2) .flex2 .spaceSize h2
+{
+    color: #000;
+    padding-right: 13px;
+    font-size: 2rem;
+}
+.card:nth-child(2) .proggres{
+    padding: 4px;
+    width: 100%;
+    background-color: var(--Very-Dark-Blue);
+}
+.card:nth-child(2) .proggres .range{
+    background:red;
+    width: 70%;
+    padding: 3px;
+}
+.flex3{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+/* responsive part */
+@media(max-width:1200px){
+    .flex {
+        margin-top: 0;
+    }
+}
+@media(max-width:1000px){
+    .flex {
+        margin-bottom: -140px;
+    }
+}
+@media(max-width:880px){
+    .flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card:nth-child(1)
+{
+    border-top-right-radius: 40%;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.card:nth-child(2) .flex2 .spaceSize
+{
+    right: 40%;
+    top: 100%;
+}
+.card:nth-child(2) .flex2 .spaceSize::after{
+    display: none;
+}
+}
+@media(max-width:768px){
+    main{
+        background-image: url(../imgas/bg-mobile.png);
+        background-position: 100%;
+        background-size: cover;
+        min-width: 100%;
+    }
+    .flex {
+        margin-bottom: 0px;
+    }
+    .card{
+        max-width: 250px !important;
+    }
+}
+
+@media(max-width:400px){
+    .card{
+        width: 200px !important;
+    }
+}
